@@ -98,7 +98,6 @@ def compare(user_info):
     gerichts_klassen = compare_clean('gesundheit', gerichts_klassen, user_gesundheit)
     gerichts_klassen = compare_clean('praesenz', gerichts_klassen, user_praesenz)
 
-    # print(gerichts_klassen, len(gerichts_klassen))
     if len(gerichts_klassen) == 1:
         return gerichts_klassen[0]['name']
     else:
