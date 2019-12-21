@@ -1,6 +1,7 @@
-import numpy as np
 import sys
-import classes
+
+import w2e.classes
+
 
 def get_infos():
     #  Eingabeoptionen
@@ -78,7 +79,7 @@ def get_infos():
             print('Bitte wähle eine der angegebenen Optionen aus.\n')
 
 
-    return classes.user_info(ausrichtung, hunger, gesundheit, praesenz)
+    return w2e.classes.user_info(ausrichtung, hunger, gesundheit, praesenz)
 
 def compare_clean(feature, list_, user_feature_info):
     for n in range(len(list_)):
@@ -93,7 +94,7 @@ def compare(user_info):
     user_gesundheit = user_info.gesundheit
     user_praesenz = user_info.praesenz
 
-    gerichts_klassen = classes.gerichts_klassen
+    gerichts_klassen = w2e.classes.gerichts_klassen
     gerichts_klassen = compare_clean('hunger', gerichts_klassen, user_hunger)
     gerichts_klassen = compare_clean('gesundheit', gerichts_klassen, user_gesundheit)
     gerichts_klassen = compare_clean('praesenz', gerichts_klassen, user_praesenz)
@@ -104,23 +105,18 @@ def compare(user_info):
         return 'bestellen'
 
 
-#  pipeline
-try:
-    user_info = get_infos()
-    ausrichtung = user_info.ausrichtung
-    user_choice = compare(user_info)
-
-except:
-    e = sys.exc_info()[0]
-    print(f'Error: {e}')
-    print('Ein Fehler ist aufgetreten. Bitte versuche es erneut.')
-
-
-
-
 
 
 
 
 if __name__ == '__main__':
-    pass
+    #  pipeline
+    try:
+        user_info = get_infos()
+        ausrichtung = user_info.ausrichtung
+        user_choice = compare(user_info)
+
+    except:
+        e = sys.exc_info()[0]
+        print(f'Error: {e}')
+        print('Ein Fehler ist aufgetreten. Bitte versuche es erneut.')
