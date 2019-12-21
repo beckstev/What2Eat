@@ -11,6 +11,7 @@ def get_recipe(dish_type, URL):
 
     soup = BeautifulSoup(page.content, 'html.parser')
     recipes = soup.find_all("a", {"class":'ds-mb ds-mb-row ds-card rsel-recipe bi-recipe-item'})
+    assert len(recipes) > 0
     random_recipe_index = np.random.randint(low=0, high=len(recipes))
     recipe_suggestion = extract_information(recipes[random_recipe_index])
     return recipe_suggestion
@@ -42,7 +43,7 @@ def generate_url(dish_type, type_of_eating, conditons):
 if __name__ == '__main__':
     type_of_eating = ''
     dish_type = 'auflauf'
-    conditons = {'cooking_time': 30, 'difficulty': 'medium'}
+
     if dish_type == 'bestellen':
         print(
             'https://www.lieferando.de/en/?gclid=EAIaIQobChMIvcb2tdLE5gIVhLHtCh2wWw_cEAAYASAAEgLUwvD_BwE&gclsrc=aw.ds')
