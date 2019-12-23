@@ -17,7 +17,7 @@ def get_infos():
             ausrichtung = 'vegan'
             break
         elif ausrichtung in Nein:
-            ausrichtung = 'vegan'
+            ausrichtung = ''
             break
         else:
             print('Bitte wähle eine der angegebenen Optionen aus.\n')
@@ -32,15 +32,9 @@ def get_infos():
                 ausrichtung = 'vegetarisch'
                 break
             elif ausrichtung in Nein:
-                ausrichtung = 'vegetarisch'
                 break
             else:
                 print('Bitte wähle eine der angegebenen Optionen aus.\n')
-
-    if ausrichtung == 'vegan' or ausrichtung == 'vegetarisch':
-        pass
-    else:
-        ausrichtung = ''
 
     print('Wie hungrig fühlst du dich?\nWähle zwischen den folgenden Optionen aus:\n\"sehr\", \"mittel\"\n')
     while True:
