@@ -12,7 +12,7 @@ dish_type = w2e.classifier.compare(user_info)
 print('\n---------------------\n')
 
 if dish_type == 'bestellen':
-    print('Bestll dir lieber was. Du bist nicht in der Stimmung zu kochen.')
+    print('Bestell dir lieber was. Du bist nicht in der Stimmung zu kochen.')
     print('Hier der passende Link: \n')
     print('https://www.lieferando.de/en/?gclid=EAIaIQobChMIvcb2tdLE5gIVhLHtCh2wWw_cEAAYASAAEgLUwvD_BwE&gclsrc=aw.ds')
     sys.exit()
